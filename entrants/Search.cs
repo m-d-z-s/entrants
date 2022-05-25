@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace entrants
 {
@@ -48,6 +49,24 @@ namespace entrants
             Top_5 top_5 = new Top_5();
             top_5.Show();
             Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+            StreamReader sr = new StreamReader("entrants.txt");
+            while (!sr.EndOfStream)
+            {
+                string str = sr.ReadLine();
+                string[] mas = str.Split();
+                if (mas[0].StartsWith(textBox1.Text))
+                {
+                    textBox2.Text += mas[0] + "\r\n";
+                }
+
+            }
+            sr.Close();
+
         }
     }
 }
