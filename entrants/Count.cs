@@ -66,7 +66,7 @@ namespace entrants
             }
             inf.Add(Convert.ToString(ball_inf_3 + " " + ball_inf_4 + " " + ball_inf_5));
             sr.Close();
-            StreamWriter sw = new StreamWriter("ball.txt", false);
+            StreamWriter sw = new StreamWriter("ball_inf.txt", false);
             for (int i = 0; i < inf.Count; i++)
             {
                 sw.WriteLine(ball_inf_3 + " " + ball_inf_4 + " " + ball_inf_5);
@@ -123,7 +123,7 @@ namespace entrants
             }
             math.Add(Convert.ToString(ball_math_3 + " " + ball_math_4 + " " + ball_math_5));
             sr.Close();
-            StreamWriter sw = new StreamWriter("ball.txt", false);
+            StreamWriter sw = new StreamWriter("ball_math.txt", false);
             for (int i = 0; i < math.Count; i++)
             {
                 sw.WriteLine(ball_math_3 + " " + ball_math_4 + " " + ball_math_5);
@@ -171,7 +171,7 @@ namespace entrants
             }
             rus.Add(Convert.ToString(ball_rus_3 + " " + ball_rus_4 + " " + ball_rus_5));
             sr.Close();
-            StreamWriter sw = new StreamWriter("ball.txt", false);
+            StreamWriter sw = new StreamWriter("ball_rus.txt", false);
             for (int i = 0; i < rus.Count; i++)
             {
                 sw.WriteLine(ball_rus_3 + " " + ball_rus_4 + " " + ball_rus_5);
@@ -184,9 +184,9 @@ namespace entrants
             chart3.Series[0].Points.AddY(Convert.ToDouble(ball_rus_3));
             chart3.Series[0].Points.AddY(Convert.ToDouble(ball_rus_4));
             chart3.Series[0].Points.AddY(Convert.ToDouble(ball_rus_5));
-            chart3.Series[0].Points[0].LegendText = "RUS 3";
-            chart3.Series[0].Points[1].LegendText = "RUS 4";
-            chart3.Series[0].Points[2].LegendText = "RUS 5";
+            chart3.Series[0].Points[0].LegendText = "3";
+            chart3.Series[0].Points[1].LegendText = "4";
+            chart3.Series[0].Points[2].LegendText = "5";
 
         }
 

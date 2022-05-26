@@ -14,7 +14,8 @@ namespace entrants
     public partial class Top_5 : Form
     {
         public List<string> top = new List<string>();
-        int max = 15;
+        public List<string> name = new List<string>();
+        public List<int> marks = new List<int>();
 
         public Top_5()
         {
@@ -57,18 +58,35 @@ namespace entrants
 
         private void button3_Click(object sender, EventArgs e)
         {
+            textBox1.Clear();
             StreamReader sr = new StreamReader("entrants.txt");
             while (!sr.EndOfStream)
             {
                 string str = sr.ReadLine();
                 string[] mas = str.Split();
-                //MessageBox.Show(ball_inf_3 + " " + ball_inf_4 + " " + ball_inf_5);
-
-
-
+                int count = Convert.ToInt32(mas[1]) + Convert.ToInt32(mas[2]) + Convert.ToInt32(mas[3]);
+                marks.Add(count);
+                name.Add(mas[0]);
             }
             sr.Close();
 
+            for (int i = 0; i < marks.Count - 1; i++)
+            {
+                for (int j = 0; j < marks.Count - i - 1; j++)
+                {
+                    if (marks[j] > marks[j])
+                    {
+                        int b = marks[j];
+                        marks[j] = marks[j + 1];
+                        marks[j + 1] = b;
+                    }
+                }
+
+            }
+            for (int i = 0; i < 5; i++)
+            {
+                textBox1.Text += i+1 + ") " + name[i]+ " " + marks[i] + "\r\n";
+            }
         }
     }
 }

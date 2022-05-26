@@ -26,9 +26,7 @@ namespace entrants
             {
                 string str = sr.ReadLine();
                 string[] mas = str.Split();
-                //MessageBox.Show(mas[0] + " " + (mas[1] + mas[2] + mas[3]));
                 avscore = Convert.ToDouble(Convert.ToInt32(mas[1]) + Convert.ToInt32(mas[2]) + Convert.ToInt32(mas[3])) / 3.0;
-                MessageBox.Show(mas[0] + " " + avscore);
 
                 if (Convert.ToDouble(numericUpDown1.Value) < avscore)
                 {
